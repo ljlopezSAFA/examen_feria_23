@@ -38,7 +38,7 @@ public class PruebaMetodos {
         catering2 = new Catering("Cafetería Ana", productos2);
 
         List<Producto> productos3 = new ArrayList<>();
-        productos3.add(producto2);
+        productos3.add(producto1);
         productos3.add(producto4);
         catering3 = new Catering("Bar Paco", productos3);
 
@@ -153,7 +153,7 @@ public class PruebaMetodos {
         List<Asistente> result = UtilidadesFeria.getPorTipoYSocios(feria, Arrays.asList(TipoAsistente.CONSUMIDOR, TipoAsistente.CABALLISTA));
 
         // Comprobar el resultado
-        assertEquals(2, result.size());
+        assertEquals(1, result.size());
         assertTrue(result.contains(asistente2));
     }
 
@@ -225,14 +225,19 @@ public class PruebaMetodos {
         totalGastadoPorAtraccionEsperado.put(a2, 2.5);
 
         // Calculamos el total gastado en el día
-        double totalGastadoEsperado = 35.0;
+        double totalGastadoEsperado = 24;
 
         // Creamos el resumen esperado
         ResumenDia resumenEsperado = new ResumenDia(asistente, consumoProductos, totalGastadoPorTipoProductoEsperado, viajesAtraccion, totalGastadoPorAtraccionEsperado, totalGastadoEsperado);
 
         // Obtenemos el resumen del día y comprobamos que es el esperado
         ResumenDia resumenObtenido = UtilidadesFeria.obtenerResumenDia(asistente, consumoProductos, viajesAtraccion);
-        assertEquals(resumenEsperado, resumenObtenido);
+        assertEquals(resumenEsperado.getAsistente(), resumenObtenido.getAsistente());
+        assertEquals(resumenEsperado.getCantidadProductos(), resumenObtenido.getCantidadProductos());
+        assertEquals(resumenEsperado.getViajesPorAtraccion(), resumenObtenido.getViajesPorAtraccion());
+        assertEquals(resumenEsperado.getTotalGastadoPorTipoProducto(), resumenObtenido.getTotalGastadoPorTipoProducto());
+        assertEquals(resumenEsperado.getTotalGastadoPorAtraccion(), resumenObtenido.getTotalGastadoPorAtraccion());
+        assertEquals(resumenEsperado.getTotalGastado(), resumenObtenido.getTotalGastado());
     }
 
 

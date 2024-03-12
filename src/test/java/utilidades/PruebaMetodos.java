@@ -106,7 +106,7 @@ public class PruebaMetodos {
         // Crear algunos asistentes
         Asistente asistente1 = new Asistente("Ana", "González", "12345678A", TipoAsistente.FERIANTE,LocalDate.of(2000,1,1), new ArrayList<>());
         Asistente asistente2 = new Asistente("Juan", "Pérez", "87654321B", TipoAsistente.FERIANTE, LocalDate.of(1999,2,28), new ArrayList<>());
-        Asistente asistente3 = new Asistente("María", "García", "23456789C", TipoAsistente.FERIANTE, LocalDate.of(2005,6,15), new ArrayList<>());
+        Asistente asistente3 = new Asistente("María", "García", "23456789C", TipoAsistente.FERIANTE, LocalDate.of(2006,6,15), new ArrayList<>());
         Asistente asistente4 = new Asistente("Pedro", "Martínez", "34567890D", TipoAsistente.FERIANTE, LocalDate.of(1998,12,24), new ArrayList<>());
 
         // Crear una lista de asistentes
